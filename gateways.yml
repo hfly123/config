@@ -10,12 +10,10 @@ spring:
     gateway:
       routes:
         - id: product_route
-          # uri: http://localhost:8084/
           uri: lb://products
           predicates:
             - Path=/product/**
         - id: user_route
-          # uri: http://localhost:8083/
           uri: lb://users
           predicates:
             - Path=/feign/**
